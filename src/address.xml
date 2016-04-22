@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd"> 
+<sqlMap namespace="Address"> 
+ 	<parameterMap id="getAddressInformation" class="com.test.vo.Address"> 		
+ 		  
+ 		<parameter property="addressTypeCd" mode="IN"/>
+ 		<parameter property="addressTypeName" javaType="java.lang.String" jdbcType="VARCHAR" mode="OUT"/>		
+	</parameterMap>
+
+	<procedure id="getAddressInformationID" parameterMap="getAddressInformation">
+		{call test.BUSINESS_ADDRESS_TYPE(?, ?)}
+	</procedure>
+      
+</sqlMap>
+

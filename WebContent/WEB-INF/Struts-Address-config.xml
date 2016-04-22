@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuration 1.3//EN" 
+"http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+	<form-beans>
+	   <form-bean name="addressForm" 
+		type="com.test.form.AddressForm"/>
+	</form-beans>
+
+	<action-mappings>
+	   <action path="/address"
+		type="com.test.action.AddressAction"
+		name="addressForm">
+		<forward name="success" path="/address.jsp"/>
+		<forward name="failure" path="/address.jsp"/>
+			
+	   </action>
+	</action-mappings>
+
+</struts-config>
